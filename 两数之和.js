@@ -29,7 +29,6 @@ var twoSum = function(nums, target) {
         }
         map.set(targetNum,i);//如果不包含就将差值放进map
     }
-    console.log(map);
 };
 
 /**
