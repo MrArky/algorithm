@@ -52,7 +52,7 @@ var strStr = function (haystack, needle) {
 
 /**
  * 思路：
- * 暴力算法 + 通过Sunday算法
+ * 暴力算法 + Sunday算法
  *
  * 相关执行逻辑解释见注释
  *
