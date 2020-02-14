@@ -36,4 +36,9 @@ var twoSum = function(nums, target) {
  * 
  * hash寻值
  * 
+ * 1.特性：hash表的键是唯一的。
+ * 2.数组每次遍历一个数，拿去和hash表中的键进行校验
+ * 2.1.如果不存在：将target-num[i]的差值作为键，i作为值保存在hash表中
+ * 2.2.如果存在，那么以num[i]为键在hash表中的值和i的组合即为最终的结果。
+ * 
  */
