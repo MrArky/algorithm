@@ -99,4 +99,6 @@ var findSubstring = function (s, words) {
  *                      1    2    3    4
  * 
  *  结论：这个结果返回 []
+ * 
+ *  时间复杂度：O(mn)
  */
