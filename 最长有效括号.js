@@ -85,4 +85,6 @@ var longestValidParentheses = function (s) {
  *      最后一位是"(",那么最大值会存入数组，且和l相同
  * 
  *  最后将max和l进行比较就能得出包含有效括号的子串的长度Math.max(max,l)
+ * 
+ * 时间复杂度：O(n)
  */
