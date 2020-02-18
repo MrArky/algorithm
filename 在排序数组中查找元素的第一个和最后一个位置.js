@@ -17,11 +17,13 @@
 var searchRange = function (nums, target) {
     var start = 0, end = nums.length - 1;
     while (end >= start) {
-        if (nums[start] == nums[end] && nums[start] != target) return [-1, -1];
-        if (nums[start] == nums[end] && nums[start] == target) return [start, end];
+        if (nums[start] == nums[end]) {
+            if (nums[start] != target) return [-1, -1];
+            else return [start, end];
+        }
         let middle = ((start + end) / 2) >> 0;
         if (target == nums[middle]) {
-            let left = middle, right = middle;
+            let left = right = middle;
             while (nums[left - 1] == target) {
                 left--;
             }
@@ -30,8 +32,8 @@ var searchRange = function (nums, target) {
             }
             return [left, right];
         }
-        if (target < nums[middle + 1]) {
-            end = middle
+        if (target < nums[middle]) {
+            end = middle;
         }
         if (target > nums[middle]) {
             start = middle + 1;
@@ -47,10 +49,16 @@ var searchRange = function (nums, target) {
  *
  * 最开始，数组开始位置start=0，结束位置end=nums.length-1
  *
+ * 当然在开始二分算法之前需要注意的是：
+ * 如果nums[start]==nums[end]：
+ * 1)如果target和nums[start]相等，那么结果直接就为[start,end]
+ * 2)否则结果直接就为[-1,-1]
+ * 
+ * 开始二分：
+ * 
  * 1.每次将数组一分为二(middle = ((start + end) / 2) >> 0;)：           //  >>0即为位移0位，此时会消除小数
  * 1.1.如果数组长度为奇数，那么左边长度-右边长度=1，否则两边长度相等
  * 1.2.每次得到的middle都是在左边数组最后一位
- *
  * 2.因此需要将target和nums[middle]进行比较：
  * 2.1.如果相等：那么判断middle前后位置是否有值依然和target相等，向前向后直到找不到后，得到的前面的位置left和后面位置right即为题解[left,right]
  * 2.2.如果过target < nums[middle + 1]，说明target只可能出现在左边数组中，将数组结束位置end设置为middle
@@ -58,5 +66,5 @@ var searchRange = function (nums, target) {
  * 3.以此类推，直到最后nums[start]和nums[end]相等，这时的数组不能再二分：
  * 3.1.那么nums[start](nums[end])==targrt，那么得到结果[statr,end];
  * 3.2否则，没有target的索引存在，返回[-1,-1]
- *
+ * 4.最后循环外返回的[-1,-1]用于应对空数组,即数组长度为0。
  */
