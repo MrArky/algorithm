@@ -6,3 +6,7 @@ git push -u origin master
 git fetch origin master:temp
 git diff temp
 git merge temp
+配置
+git config --global core.quotepath false
+git config --global user.email "####@##.cn"
+git config --global user.name "MrArky"
