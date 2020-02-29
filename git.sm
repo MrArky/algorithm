@@ -1,0 +1,8 @@
+添加修改：
+git add '文件名.后缀名'
+git commit -m '说明'
+git push -u origin master
+更新：
+git fetch origin master:temp
+git diff temp
+git merge temp
