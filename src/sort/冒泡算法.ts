@@ -10,9 +10,7 @@ const bubbleSort = (nums: number[]) => {
         // 前面的数一定比自己小，所以 j 是从 i + 1 开始
         for (let j = i + 1; j < nums.length; j++) {
             // 正序还是倒序，取决于这个判断是大于还是小于
-            if (nums[i] > nums[j]) {
-                [nums[i], nums[j]] = [nums[j], nums[i]]
-            }
+            if (nums[i] > nums[j]) [nums[i], nums[j]] = [nums[j], nums[i]];
         }
     }
     console.log(nums);
