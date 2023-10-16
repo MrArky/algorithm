@@ -7,7 +7,7 @@ const nums: number[] = new Array(20 * Math.random() >> 0).fill(0).map(() => Math
  */
 const selectionSort = (nums: number[]) => {
     for (let i = 0; i < nums.length - 1; i++) {
-        // 记录从 i 到 nums.length - 1 最小值的索引
+        // 记录从 i 到 nums.length - 1 最小值索引
         let minIdx = i;
         for (let j = i + 1; j < nums.length; j++) {
             // 比较值大小，交换索引
