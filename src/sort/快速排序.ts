@@ -5,7 +5,7 @@ const nums: number[] = new Array(50 * Math.random() >> 0).fill(0).map(() => Math
  * 快速排序（递归实现）
  * @param nums 
  */
-const quickSort = (nums: number[]) => {
+export const quickSort = (nums: number[]) => {
     /**
      * 递归
      * @param start 排序开始索引
@@ -21,9 +21,9 @@ const quickSort = (nums: number[]) => {
                 // [nums[mid], nums[j]] = [nums[j], nums[mid]];
                 nums[mid] = nums[j];
                 // 始终保证 mid 指针指向的的值都大于 key
-                while (nums[mid] < key) mid++;
+                while (nums[mid] < key && mid < j) mid++;
                 // 将当前 mid 指针指向的值放入之前 nums[j] 的位置
-                if (mid < j) nums[j] = nums[mid];
+                nums[j] = nums[mid];
             }
         }
         nums[mid] = key;
@@ -32,7 +32,8 @@ const quickSort = (nums: number[]) => {
     }
     recursion(0, nums.length);
 }
-
+console.log(nums);
+console.log([...nums].sort((a, b) => a - b));
 quickSort(nums);
 
 console.log(nums);

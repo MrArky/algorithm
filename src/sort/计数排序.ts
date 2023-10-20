@@ -9,7 +9,7 @@ const countingSort = (nums: number[]) => {
     const max = Math.max(...nums);
     const count = new Array(max + 1).fill(0);
     for (let num of nums) count[num]++;
-    for (let i = 1, j = 0; i < count.length; i++) {
+    for (let i = 0, j = 0; i < count.length; i++) {
         while (count[i] > 0) {
             nums[j++] = i;
             count[i]--;
