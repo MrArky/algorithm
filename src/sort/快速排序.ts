@@ -32,8 +32,7 @@ export const quickSort = (nums: number[]) => {
     }
     recursion(0, nums.length);
 }
-console.log(nums);
-console.log([...nums].sort((a, b) => a - b));
+
 quickSort(nums);
 
 console.log(nums);
