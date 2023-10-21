@@ -24,3 +24,10 @@ const bucketSort = (nums: number[]) => {
 }
 
 console.log(bucketSort(nums));
+
+
+/**
+ * 分析：
+ * 平均时间复杂度：O(n+k)，最差时间复杂度：O(n^2)
+ * 空间复杂度：O(n*k)
+ */
