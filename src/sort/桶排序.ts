@@ -3,6 +3,11 @@ import { quickSort } from "./快速排序";
 // 生成测试用例
 const nums: number[] = new Array(50 * Math.random() >> 0).fill(0).map(() => Math.random() * 100 >> 0);
 
+/**
+ * 桶排序
+ * @param nums 
+ * @returns 
+ */
 const bucketSort = (nums: number[]) => {
     if (!nums.length) return nums;
     let min = Math.min(...nums);
