@@ -24,3 +24,10 @@ const radixSort = (nums: number[]) => {
 }
 
 radixSort(nums);
+
+/**
+ * 分析：
+ * 时间复杂度：O(k*(n+10))  k 为最大数字的长度 比如：12436 长度为 5
+ * 空间复杂度: O(10*n)
+ * 稳定算法
+ */
