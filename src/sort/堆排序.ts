@@ -44,7 +44,6 @@ const heapSort = (nums: number[]) => {
     console.log(nums);
 }
 
-console.log([...nums].sort((a, b) => a - b));
 heapSort(nums);
 
 
